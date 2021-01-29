@@ -16,7 +16,12 @@ services:
     ports:
       - 80:80
       - 443:443
+    volumes:
+      - ./nginx/files:/etc/ssl/
     depends_on:
       - app
-
+  
+  
+  
+  
     # your code goes here ...
