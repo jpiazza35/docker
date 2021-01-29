@@ -5,15 +5,18 @@ services:
   app:
     container_name: containerize_app_1
     build: ./app
-    expose: 
-      - 8000
+    ports: 
+      - 8000:8000
 
     # your code goes here ...
   nginx:
     container_name: containerize_nginx_1
     build: ./nginx
+    restart: always
     ports:
       - 80:80
       - 443:443
+    depends_on:
+      - app
 
     # your code goes here ...
